@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Something Special ✨</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body class="page2">
+
+    <div class="star-field"></div>
+
+
+    <div class="reveal-container">
+
+
+        <!-- SCANNING -->
+
+        <div id="scanner">
+
+            <div class="scanner-ring">
+
+                <div class="scanner-inner">
+
+                    <span id="percentage">
+                        0%
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p class="scanning-text">
+                SCANNING...
+            </p>
+
+
+            <p class="small-scanning">
+                Preparing something special ✨
+            </p>
+
+        </div>
+
+
+
+        <!-- AFTER SCANNING -->
+
+        <div id="reveal" class="hidden">
+
+            <p class="found-text">
+                ✦ IDENTITY FOUND ✦
+            </p>
+
+
+            <h1>
+                Someone Special
+            </h1>
+
+
+            <div class="reveal-photo">
+
+                <img
+                    src="photo/photo1.jpeg"
+                    alt="Birthday Photo">
+
+            </div>
+
+
+            <p class="reveal-message">
+
+                Some people don't need an introduction.<br>
+
+                Their presence is enough. ✨
+
+            </p>
+
+
+            <a href="page3.html"
+               class="button">
+
+                Continue the Surprise →
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        let number = 0;
+
+        const percentage =
+            document.getElementById("percentage");
+
+        const scanner =
+            document.getElementById("scanner");
+
+        const reveal =
+            document.getElementById("reveal");
+
+
+        const loading = setInterval(function () {
+
+            number++;
+
+            percentage.textContent =
+                number + "%";
+
+
+            if (number >= 100) {
+
+                clearInterval(loading);
+
+
+                setTimeout(function () {
+
+                    scanner.style.display = "none";
+
+                    reveal.classList.remove("hidden");
+
+                }, 700);
+
+            }
+
+        }, 35);
+
+    </script>
+
+
+</body>
+
+</html>

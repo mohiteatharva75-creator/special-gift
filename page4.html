@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday 🎂</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body class="page4">
+
+
+    <!-- Floating balloons -->
+
+    <div class="balloons">
+
+        <span>🎈</span>
+        <span>🎈</span>
+        <span>🎈</span>
+        <span>🎈</span>
+        <span>🎈</span>
+        <span>🎈</span>
+
+    </div>
+
+
+
+    <div class="final-container">
+
+
+        <!-- Birthday heading -->
+
+        <p class="final-small">
+            ✨ A little something for you ✨
+        </p>
+
+
+        <h1>
+            HAPPY BIRTHDAY
+        </h1>
+
+
+        <h2 class="birthday-icon">
+            🎂
+        </h2>
+
+
+        <p class="final-text">
+
+            Wishing you a truly beautiful birthday
+            and an even more beautiful year ahead.
+
+        </p>
+
+
+
+        <!-- PHOTO SLIDESHOW -->
+
+        <div class="slideshow">
+
+            <img
+                id="birthdayPhoto"
+                src="photo/photo1.jpeg"
+                alt="Birthday Photo">
+
+        </div>
+
+
+
+        <p class="bottom-text">
+
+            Keep smiling. Keep shining. ✨
+
+        </p>
+
+
+
+        <!-- SECRET SECTION -->
+
+        <div class="secret-section">
+
+
+            <h3>
+                🔐 One Last Thing...
+            </h3>
+
+
+            <p class="secret-intro">
+                There are five little messages hidden here.
+            </p>
+
+
+
+            <div class="secret-buttons">
+
+
+                <button
+                    onclick="showMessage(1)">
+
+                    ✨ 01
+
+                </button>
+
+
+                <button
+                    onclick="showMessage(2)">
+
+                    🌸 02
+
+                </button>
+
+
+                <button
+                    onclick="showMessage(3)">
+
+                    🎂 03
+
+                </button>
+
+
+                <button
+                    onclick="showMessage(4)">
+
+                    👀 04
+
+                </button>
+
+
+                <button
+                    onclick="showMessage(5)">
+
+                    🌙 05
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <!-- MESSAGE POPUP -->
+
+    <div
+        id="messagePopup"
+        class="message-popup">
+
+
+        <div class="message-box">
+
+
+            <button
+                class="close-button"
+                onclick="closeMessage()">
+
+                ×
+
+            </button>
+
+
+            <div id="messageIcon">
+                ✨
+            </div>
+
+
+            <p id="secretMessage"></p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <script>
+
+
+        /* =========================
+           PHOTO SLIDESHOW
+        ========================= */
+
+
+        const photos = [
+
+            "photo/photo1.jpeg",
+
+            "photo/photo2.jpeg"
+
+        ];
+
+
+        let currentPhoto = 0;
+
+
+        const image =
+            document.getElementById(
+                "birthdayPhoto"
+            );
+
+
+        setInterval(function () {
+
+
+            image.classList.add("fade");
+
+
+            setTimeout(function () {
+
+
+                currentPhoto++;
+
+
+                if (
+                    currentPhoto >= photos.length
+                ) {
+
+                    currentPhoto = 0;
+
+                }
+
+
+                image.src =
+                    photos[currentPhoto];
+
+
+                image.classList.remove("fade");
+
+
+            }, 500);
+
+
+        }, 1000);
+
+
+
+        /* =========================
+           SECRET MESSAGES
+        ========================= */
+
+
+        const messages = {
+
+            1: {
+
+                icon: "✨",
+
+                text:
+                "Some people are simply meant to make the world a little brighter. Keep being exactly who you are."
+
+            },
+
+
+            2: {
+
+                icon: "🌸",
+
+                text:
+                "Never forget how beautiful your smile is. May you always have a reason to wear it."
+
+            },
+
+
+            3: {
+
+                icon: "🎂",
+
+                text:
+                "One last thing... I hope this little surprise added an extra smile to your special day. Happy Birthday once again! 🎂✨"
+
+            },
+
+
+            4: {
+
+                icon: "👀",
+
+                text:
+                "And yes... your eyes really are something special. ✨ Don't let anyone convince you otherwise."
+
+            },
+
+
+            5: {
+
+                icon: "🌙",
+
+                text:
+                "No big words. No complicated message. Just one simple wish: May life always give you reasons to smile. ✨"
+
+            }
+
+        };
+
+
+
+        function showMessage(number) {
+
+
+            const popup =
+                document.getElementById(
+                    "messagePopup"
+                );
+
+
+            const message =
+                document.getElementById(
+                    "secretMessage"
+                );
+
+
+            const icon =
+                document.getElementById(
+                    "messageIcon"
+                );
+
+
+            icon.textContent =
+                messages[number].icon;
+
+
+            message.textContent =
+                messages[number].text;
+
+
+            popup.classList.add("show");
+
+
+        }
+
+
+
+        function closeMessage() {
+
+
+            const popup =
+                document.getElementById(
+                    "messagePopup"
+                );
+
+
+            popup.classList.remove("show");
+
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

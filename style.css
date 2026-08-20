@@ -1,0 +1,1228 @@
+/* =====================================================
+   BIRTHDAY CARD - COMPLETE STYLE SHEET
+   Pages 1, 2, 3 & 4
+===================================================== */
+
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+    color: white;
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   COMMON PAGE SETTINGS
+===================================================== */
+
+.page1,
+.page2,
+.page3,
+.page4 {
+    min-height: 100vh;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+
+/* =====================================================
+   PAGE 1
+===================================================== */
+
+.page1 {
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #35245f,
+            #100b20 55%,
+            #05030a
+        );
+}
+
+.home-content {
+    width: 100%;
+    max-width: 600px;
+
+    position: relative;
+    z-index: 2;
+
+    animation: appear 1.5s ease;
+}
+
+.page1 h1 {
+    font-size:
+        clamp(2.5rem, 10vw, 4.5rem);
+
+    margin-bottom: 20px;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 20px rgba(255,255,255,0.4);
+}
+
+.page1 p {
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+}
+
+.big-text {
+    font-size: 1.4rem !important;
+}
+
+.gift {
+    font-size: 90px;
+
+    margin-bottom: 20px;
+
+    animation:
+        float 2s ease-in-out infinite;
+}
+
+
+/* PAGE 1 STARS */
+
+.stars {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            circle,
+            white 1px,
+            transparent 1px
+        );
+
+    background-size: 100px 100px;
+
+    opacity: 0.3;
+
+    animation:
+        starMove 15s linear infinite;
+}
+
+@keyframes starMove {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-100px);
+    }
+}
+
+
+/* =====================================================
+   PAGE 2
+===================================================== */
+
+.page2 {
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow-y: auto;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #241044 0%,
+            #0c0618 45%,
+            #020107 100%
+        );
+}
+
+
+/* Page 2 stars */
+
+.star-field {
+    position: fixed;
+
+    inset: 0;
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            white 1px,
+            transparent 1px
+        ),
+
+        radial-gradient(
+            circle,
+            white 1px,
+            transparent 1px
+        );
+
+    background-size:
+        90px 90px,
+        140px 140px;
+
+    background-position:
+        0 0,
+        40px 60px;
+
+    opacity: 0.35;
+
+    animation:
+        starMove 12s linear infinite;
+
+    pointer-events: none;
+}
+
+
+/* Page 2 container */
+
+.reveal-container {
+    width: 100%;
+
+    max-width: 650px;
+
+    padding: 30px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* Scanner */
+
+#scanner {
+    animation:
+        scannerAppear 1s ease;
+}
+
+.scanner-ring {
+    width: 180px;
+    height: 180px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background:
+        conic-gradient(
+            #ffffff,
+            #a86cff,
+            #ffffff,
+            #7b3cff,
+            #ffffff
+        );
+
+    animation:
+        scannerRotate 2s linear infinite;
+
+    box-shadow:
+        0 0 25px rgba(170,100,255,0.5),
+        0 0 70px rgba(130,60,255,0.25);
+}
+
+.scanner-inner {
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    background: #0b0615;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#percentage {
+    font-size: 2rem;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.scanning-text {
+    margin-top: 30px;
+
+    font-size: 1.2rem;
+
+    letter-spacing: 5px;
+
+    animation:
+        textPulse 1.2s infinite;
+}
+
+.small-scanning {
+    opacity: 0.55;
+
+    font-size: 0.9rem;
+
+    margin-top: 10px;
+}
+
+
+/* Scanner animations */
+
+@keyframes scannerRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes textPulse {
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes scannerAppear {
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/* Hidden */
+
+.hidden {
+    display: none;
+}
+
+
+/* Identity */
+
+.found-text {
+    font-size: 0.9rem;
+
+    letter-spacing: 5px;
+
+    opacity: 0.7;
+
+    margin-bottom: 12px;
+
+    animation:
+        fadeUp 1s ease;
+}
+
+
+/* Page 2 heading */
+
+.page2 h1 {
+    font-size:
+        clamp(2.2rem, 9vw, 4rem);
+
+    margin-bottom: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #d6a8ff,
+            #ffffff
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Page 2 photo */
+
+.reveal-photo {
+    width:
+        min(78vw, 350px);
+
+    aspect-ratio: 3 / 4;
+
+    margin: auto;
+
+    padding: 8px;
+
+    position: relative;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.8),
+            rgba(150,80,255,0.5),
+            rgba(255,255,255,0.2)
+        );
+
+    box-shadow:
+        0 0 25px rgba(170,100,255,0.4),
+        0 0 80px rgba(120,50,255,0.25);
+
+    animation:
+        photoReveal 1.5s
+        cubic-bezier(.17,.67,.3,1.3);
+}
+
+.reveal-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 19px;
+}
+
+@keyframes photoReveal {
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.5)
+            rotate(-8deg);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0);
+    }
+}
+
+
+/* Page 2 message */
+
+.reveal-message {
+    margin-top: 30px;
+
+    font-size: 1.15rem;
+
+    line-height: 1.8;
+
+    opacity: 0;
+
+    animation:
+        fadeUp 1s ease 0.7s forwards;
+}
+
+
+/* =====================================================
+   PAGE 3
+===================================================== */
+
+.page3 {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle,
+            #47234f,
+            #160b20 65%
+        );
+}
+
+.message-container {
+    width: 100%;
+
+    max-width: 650px;
+
+    animation:
+        appear 1.5s ease;
+}
+
+.page3 h1 {
+    font-size:
+        clamp(2.2rem, 9vw, 4rem);
+
+    margin-bottom: 20px;
+}
+
+.sparkle {
+    font-size: 45px;
+
+    margin-bottom: 10px;
+
+    animation:
+        float 2s ease-in-out infinite;
+}
+
+
+/* Birthday message */
+
+.message {
+    margin: 30px auto;
+
+    padding: 25px;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    border-radius: 20px;
+
+    backdrop-filter:
+        blur(10px);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+}
+
+.message p {
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+.message p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Shayari */
+
+.shayari {
+    margin: 30px auto;
+
+    padding: 25px;
+
+    border-left:
+        2px solid
+        rgba(255,255,255,0.6);
+
+    border-right:
+        2px solid
+        rgba(255,255,255,0.6);
+
+    font-style: italic;
+
+    background:
+        rgba(255,255,255,0.03);
+
+    border-radius: 15px;
+}
+
+.shayari p {
+    font-size: 1.2rem;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   PAGE 4 - FINAL SURPRISE
+===================================================== */
+
+.page4 {
+    min-height: 100vh;
+
+    position: relative;
+
+    overflow-x: hidden;
+
+    overflow-y: auto;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #30194b,
+            #08040e 70%
+        );
+}
+
+
+/* Final container */
+
+.final-container {
+    width: 100%;
+
+    max-width: 700px;
+
+    padding: 25px;
+
+    position: relative;
+
+    z-index: 5;
+
+    animation:
+        appear 1.5s ease;
+}
+
+
+/* Small heading */
+
+.final-small {
+    font-size: 0.9rem;
+
+    letter-spacing: 3px;
+
+    opacity: 0.75;
+
+    margin-bottom: 10px;
+}
+
+
+/* Main heading */
+
+.page4 h1 {
+    font-size:
+        clamp(2rem, 10vw, 4.5rem);
+
+    margin-bottom: 5px;
+
+    letter-spacing: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #d9a8ff,
+            #ffffff
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Cake */
+
+.birthday-icon {
+    font-size: 45px;
+
+    margin-bottom: 5px;
+
+    animation:
+        birthdayBounce 2s infinite;
+}
+
+@keyframes birthdayBounce {
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-10px);
+    }
+}
+
+
+/* Final text */
+
+.final-text {
+    max-width: 550px;
+
+    margin:
+        0 auto 25px;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   PAGE 4 - PHOTO SLIDESHOW
+===================================================== */
+
+.slideshow {
+    width:
+        min(88vw, 500px);
+
+    height:
+        min(110vw, 600px);
+
+    max-height: 65vh;
+
+    margin: 30px auto;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    border:
+        2px solid
+        rgba(255,255,255,0.3);
+
+    background:
+        rgba(255,255,255,0.05);
+
+    box-shadow:
+        0 0 40px
+        rgba(255,255,255,0.2);
+}
+
+.slideshow img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+.slideshow img.fade {
+    opacity: 0;
+
+    transform:
+        scale(1.08);
+}
+
+
+.bottom-text {
+    font-size: 1.2rem;
+
+    opacity: 0.9;
+
+    margin-bottom: 5px;
+}
+
+
+/* =====================================================
+   PAGE 4 - FLOATING BALLOONS
+===================================================== */
+
+.balloons {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+.balloons span {
+    position: absolute;
+
+    bottom: -100px;
+
+    font-size: 35px;
+
+    opacity: 0.75;
+
+    animation:
+        balloonFloat
+        10s linear infinite;
+}
+
+.balloons span:nth-child(1) {
+    left: 5%;
+
+    animation-delay: 0s;
+}
+
+.balloons span:nth-child(2) {
+    left: 20%;
+
+    animation-delay: 2s;
+}
+
+.balloons span:nth-child(3) {
+    left: 40%;
+
+    animation-delay: 4s;
+}
+
+.balloons span:nth-child(4) {
+    left: 60%;
+
+    animation-delay: 1s;
+}
+
+.balloons span:nth-child(5) {
+    left: 80%;
+
+    animation-delay: 3s;
+}
+
+.balloons span:nth-child(6) {
+    left: 92%;
+
+    animation-delay: 5s;
+}
+
+@keyframes balloonFloat {
+    0% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    50% {
+        transform:
+            translateY(-50vh)
+            rotate(5deg);
+    }
+
+    100% {
+        transform:
+            translateY(-115vh)
+            rotate(-5deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   PAGE 4 - SECRET SECTION
+===================================================== */
+
+.secret-section {
+    margin-top: 35px;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    backdrop-filter:
+        blur(12px);
+}
+
+.secret-section h3 {
+    font-size: 1.4rem;
+
+    margin-bottom: 8px;
+}
+
+.secret-intro {
+    font-size: 0.9rem;
+
+    opacity: 0.7;
+
+    margin-bottom: 20px;
+}
+
+
+/* Secret buttons */
+
+.secret-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.secret-buttons button {
+    width: 55px;
+
+    height: 45px;
+
+    border-radius: 15px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.3);
+
+    background:
+        rgba(255,255,255,0.08);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    transition:
+        0.3s;
+}
+
+.secret-buttons button:hover {
+    transform:
+        translateY(-5px)
+        scale(1.05);
+
+    background:
+        rgba(255,255,255,0.2);
+
+    box-shadow:
+        0 0 20px
+        rgba(180,100,255,0.4);
+}
+
+
+/* =====================================================
+   PAGE 4 - SECRET MESSAGE POPUP
+===================================================== */
+
+.message-popup {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+
+    background:
+        rgba(0,0,0,0.7);
+
+    backdrop-filter:
+        blur(10px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        0.4s;
+
+    z-index: 100;
+}
+
+.message-popup.show {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* Message box */
+
+.message-box {
+    width: 100%;
+
+    max-width: 450px;
+
+    padding: 40px 30px;
+
+    position: relative;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #241044,
+            #0d0717
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.25);
+
+    box-shadow:
+        0 0 40px
+        rgba(160,90,255,0.4);
+
+    transform:
+        scale(0.7);
+
+    transition:
+        0.4s;
+}
+
+.message-popup.show .message-box {
+    transform:
+        scale(1);
+}
+
+
+/* Popup icon */
+
+#messageIcon {
+    font-size: 45px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Popup message */
+
+#secretMessage {
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+}
+
+
+/* Close button */
+
+.close-button {
+    position: absolute;
+
+    top: 10px;
+
+    right: 15px;
+
+    width: 35px;
+
+    height: 35px;
+
+    border: none;
+
+    background:
+        transparent;
+
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   COMMON BUTTON
+===================================================== */
+
+.button {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 14px 28px;
+
+    border-radius: 50px;
+
+    color: white;
+
+    text-decoration: none;
+
+    background:
+        rgba(255,255,255,0.12);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.4);
+
+    backdrop-filter:
+        blur(10px);
+
+    transition:
+        0.3s;
+}
+
+.button:hover {
+    transform:
+        scale(1.08);
+
+    background:
+        rgba(255,255,255,0.25);
+
+    box-shadow:
+        0 0 20px
+        rgba(180,100,255,0.3);
+}
+
+
+/* =====================================================
+   GENERAL ANIMATIONS
+===================================================== */
+
+@keyframes appear {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-15px);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 500px) {
+
+    .page1,
+    .page2,
+    .page3,
+    .page4 {
+        padding: 20px;
+    }
+
+
+    .gift {
+        font-size: 70px;
+    }
+
+
+    .scanner-ring {
+        width: 150px;
+        height: 150px;
+    }
+
+
+    .scanner-inner {
+        width: 125px;
+        height: 125px;
+    }
+
+
+    .reveal-message {
+        font-size: 1rem;
+    }
+
+
+    .shayari p {
+        font-size: 1.05rem;
+    }
+
+
+    .slideshow {
+        width: 88vw;
+
+        height: 60vh;
+
+        max-height: 520px;
+    }
+
+
+    .secret-section {
+        padding: 20px;
+    }
+
+
+    .secret-buttons button {
+        width: 50px;
+
+        height: 42px;
+
+        font-size: 0.8rem;
+    }
+
+
+    .message-box {
+        padding:
+            35px 22px;
+    }
+
+
+    #secretMessage {
+        font-size: 1rem;
+    }
+
+
+    .final-small {
+        font-size: 0.75rem;
+    }
+
+
+    .birthday-icon {
+        font-size: 38px;
+    }
+
+}
